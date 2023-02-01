@@ -234,11 +234,11 @@ function deleteProduct(prod) {
 // Handle Checkout btn
 
 function done() {
-  
-  cartBody.children.forEach(elem => {
-    elem.remove();
-  }) 
+  let products = [...cartBody.children];
 
+  products.forEach((elem) => {
+    elem.remove();
+  })
   let empty = document.createElement("span");
   empty.style.textAlign = "center";
   empty.textContent = "Your Cart is Empty";
